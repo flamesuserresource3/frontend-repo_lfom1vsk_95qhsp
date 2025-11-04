@@ -1,0 +1,54 @@
+import React from 'react';
+import Spline from '@splinetool/react-spline';
+import { Rocket } from 'lucide-react';
+
+const Hero = () => {
+  return (
+    <section className="relative min-h-[90vh] w-full overflow-hidden bg-black text-white">
+      {/* 3D Spline Scene */}
+      <div className="absolute inset-0">
+        <Spline
+          scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode"
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
+
+      {/* Soft gradient overlays to blend scene with page aesthetics */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black" />
+
+      {/* Content */}
+      <div className="relative mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur">
+          <Rocket size={14} className="text-violet-300" />
+          <span>Growth-focused digital experiences</span>
+        </div>
+
+        <h1 className="font-geist text-4xl leading-tight md:text-6xl md:leading-[1.1]">
+          Elevate Your Brand with
+          <span className="bg-gradient-to-r from-violet-300 via-fuchsia-300 to-amber-300 bg-clip-text text-transparent"> AI-Driven Marketing</span>
+        </h1>
+        <p className="mt-4 max-w-2xl text-balance text-white/80 md:text-lg">
+          We craft high-converting campaigns, build intelligent AI agents, and design fast, modern websites that turn visitors into customers.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#services"
+            className="rounded-md bg-white px-5 py-3 font-medium text-black transition hover:bg-white/90"
+          >
+            Explore Services
+          </a>
+          <a
+            href="#contact"
+            className="rounded-md border border-white/20 bg-white/5 px-5 py-3 font-medium text-white transition hover:bg-white/10"
+          >
+            Get a Proposal
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
